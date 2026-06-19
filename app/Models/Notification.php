@@ -9,6 +9,8 @@ class Notification extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
     protected $fillable = [
         'user_id',
         'title',
@@ -21,6 +23,7 @@ class Notification extends Model
 
     protected $casts = [
         'is_read' => 'boolean',
+        'created_at' => 'datetime',
     ];
 
     // Relasi: User yang menerima notifikasi

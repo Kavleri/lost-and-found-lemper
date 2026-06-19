@@ -22,3 +22,13 @@
 Homestead.json
 Homestead.yaml
 Thumbs.db
+
+# Local Assignment & Document Files (Non-project)
+/Catatan/
+/Tugas/
+/stitch/
+PROJECT_PLANNING_SOLUTION_GOOGLE_DOCS*
+*.docx
+lost-founddb.sql
+usecase.jpeg
+composer.phar
