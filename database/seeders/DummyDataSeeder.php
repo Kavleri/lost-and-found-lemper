@@ -15,7 +15,7 @@ class DummyDataSeeder extends Seeder
     public function run(): void
     {
         // Ambil data user secara dinamis
-        $budi = User::where('email', 'budi@student.campus.edu')->first();
+        $rian = User::where('email', 'rian@student.campus.edu')->first();
         $saya = User::where('email', 'saya@student.campus.edu')->first();
         $admin = User::where('email', 'admin@campus.edu')->first();
         $satpam = User::where('email', 'satpam@campus.edu')->first();
@@ -26,19 +26,19 @@ class DummyDataSeeder extends Seeder
         $pakaian = Category::where('name', 'Pakaian/Aksesoris')->first();
         $lainnya = Category::where('name', 'Lainnya')->first();
 
-        if (!$budi || !$saya || !$admin || !$satpam) {
+        if (!$rian || !$saya || !$admin || !$satpam) {
             return;
         }
 
         // 1. Seed Tabel Items (Barang Hilang & Ditemukan)
         
-        // Item 1: Laptop ASUS ROG (Status: Hilang - dilaporkan oleh Budi)
+        // Item 1: Laptop ASUS ROG (Status: Hilang - dilaporkan oleh Rian)
         $item1 = Item::firstOrCreate(
             ['name' => 'Laptop ASUS ROG G14'],
             [
                 'item_code' => 'LF-' . mt_rand(100000, 999999),
                 'category_id' => $elektronik->id,
-                'reporter_id' => $budi->id,
+                'reporter_id' => $rian->id,
                 'description' => 'Laptop ASUS ROG Zephyrus G14 warna abu-abu gelap, terdapat stiker GitHub di bagian belakang layar. Hilang sekitar jam 2 siang.',
                 'location_lost' => 'Perpustakaan Utama Lantai 2 (Area Belajar)',
                 'date_lost' => Carbon::now()->subDays(5),
@@ -65,7 +65,7 @@ class DummyDataSeeder extends Seeder
             ]
         );
 
-        // Item 3: Dompet Kulit Coklat (Status: Selesai - ditemukan oleh Saya, diklaim oleh Budi)
+        // Item 3: Dompet Kulit Coklat (Status: Selesai - ditemukan oleh Saya, diklaim oleh Rian)
         $item3 = Item::firstOrCreate(
             ['name' => 'Dompet Kulit Levi\'s Coklat'],
             [
@@ -78,7 +78,7 @@ class DummyDataSeeder extends Seeder
                 'date_found' => Carbon::now()->subDays(2),
                 'status' => 'selesai',
                 'is_confidential' => true,
-                'hidden_details' => 'Di dalamnya berisi kartu mahasiswa atas nama Budi Santoso dan uang tunai Rp 120.000.',
+                'hidden_details' => 'Di dalamnya berisi kartu mahasiswa atas nama Rian Hidayat dan uang tunai Rp 120.000.',
                 'drop_off_location' => 'Layanan Informasi Gedung C',
                 'verified_by' => $admin->id,
                 'verified_at' => Carbon::now()->subDay(),
@@ -119,11 +119,11 @@ class DummyDataSeeder extends Seeder
 
         // 2. Seed Tabel Claims (Klaim Barang)
 
-        // Klaim 1: Budi mengklaim Jas Hujan Eiger Merah (Status: Pending)
+        // Klaim 1: Rian mengklaim Jas Hujan Eiger Merah (Status: Pending)
         $claim1 = Claim::firstOrCreate(
             [
                 'item_id' => $item5->id,
-                'claimant_id' => $budi->id,
+                'claimant_id' => $rian->id,
             ],
             [
                 'description' => 'Jas hujan merah saya tertinggal kemarin waktu berteduh di pos satpam saat hujan lebat.',
@@ -132,15 +132,15 @@ class DummyDataSeeder extends Seeder
             ]
         );
 
-        // Klaim 2: Budi mengklaim Dompet Kulit Levi\'s Coklat (Status: Approved / Selesai)
+        // Klaim 2: Rian mengklaim Dompet Kulit Levi\'s Coklat (Status: Approved / Selesai)
         $claim2 = Claim::firstOrCreate(
             [
                 'item_id' => $item3->id,
-                'claimant_id' => $budi->id,
+                'claimant_id' => $rian->id,
             ],
             [
                 'description' => 'Saya kehilangan dompet di kantin saat makan siang. Dompet itu berisi KTM saya.',
-                'proof_details' => 'KTM di dalamnya atas nama saya Budi Santoso, jurusan Teknik Informatika.',
+                'proof_details' => 'KTM di dalamnya atas nama saya Rian Hidayat, jurusan Teknik Informatika.',
                 'status' => 'approved',
                 'verified_by' => $admin->id,
                 'verified_at' => Carbon::now()->subDay(),
@@ -166,10 +166,10 @@ class DummyDataSeeder extends Seeder
 
         // 3. Seed Tabel Notifications (Notifikasi)
 
-        // Notifikasi untuk Budi tentang klaim dompet disetujui
+        // Notifikasi untuk Rian tentang klaim dompet disetujui
         Notification::firstOrCreate(
             [
-                'user_id' => $budi->id,
+                'user_id' => $rian->id,
                 'title' => 'Klaim Dompet Disetujui',
             ],
             [
@@ -203,7 +203,7 @@ class DummyDataSeeder extends Seeder
                 'title' => 'Pengajuan Klaim Baru',
             ],
             [
-                'message' => 'Ada pengajuan klaim baru untuk barang "Jas Hujan Eiger Merah" oleh Budi Santoso. Harap periksa di dashboard verifikasi.',
+                'message' => 'Ada pengajuan klaim baru untuk barang "Jas Hujan Eiger Merah" oleh Rian Hidayat. Harap periksa di dashboard verifikasi.',
                 'type' => 'both',
                 'is_read' => false,
                 'related_item_id' => $item5->id,
