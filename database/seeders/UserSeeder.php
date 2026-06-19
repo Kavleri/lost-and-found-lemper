@@ -11,10 +11,10 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         User::updateOrCreate(
-            ['email' => 'budi@student.campus.edu'],
+            ['email' => 'rian@student.campus.edu'],
             [
                 'nim_nip' => '1202190042',
-                'name' => 'Budi Santoso',
+                'name' => 'Rian Hidayat',
                 'password' => Hash::make('password123'),
                 'role' => 'mahasiswa',
                 'phone' => '081234567890',
