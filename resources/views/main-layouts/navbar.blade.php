@@ -11,25 +11,21 @@
                     </svg>
                 </button>
 
-                <div class="flex items-center space-x-2">
-                    <div
-                        class="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-700 rounded-lg flex items-center justify-center">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                        </svg>
+                <a href="{{ route('dashboard') }}" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 rounded-full overflow-hidden bg-[#0a4029] flex items-center justify-center border border-emerald-800/20 shadow-sm shrink-0">
+                        <img src="{{ asset('images/logo.png') }}" class="w-9 h-9 object-contain transform hover:scale-105 transition-transform duration-300" alt="Logo">
                     </div>
                     <div class="hidden sm:block">
                         <h1 class="text-lg font-bold text-gray-900">Campus Portal</h1>
                         <p class="text-xs text-gray-600">Lost & Found System</p>
                     </div>
-                </div>
+                </a>
             </div>
 
             <!-- Search Bar (Desktop) -->
-            <div class="hidden md:flex flex-1 max-w-lg mx-8">
+            <form action="{{ route('items.index') }}" method="GET" class="hidden md:flex flex-1 max-w-lg mx-8">
                 <div class="relative w-full">
-                    <input type="text" placeholder="Cari barang hilang..."
+                    <input type="text" name="search" value="{{ request('search') }}" placeholder="Cari barang hilang..."
                         class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
                     <svg class="absolute left-3 top-2.5 w-5 h-5 text-gray-400" fill="none" stroke="currentColor"
                         viewBox="0 0 24 24">
@@ -37,17 +33,17 @@
                             d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg>
                 </div>
-            </div>
+            </form>
 
             <!-- Right Actions -->
             <div class="flex items-center space-x-2 sm:space-x-4">
                 <!-- Mobile Search -->
-                <button class="md:hidden p-2 text-gray-600 hover:text-blue-600">
+                <a href="{{ route('items.index') }}" class="md:hidden p-2 text-gray-600 hover:text-blue-600" title="Cari Barang">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg>
-                </button>
+                </a>
 
                 <!-- Notifikasi Dropdown -->
                 <div class="relative" x-data="{ open: false }">

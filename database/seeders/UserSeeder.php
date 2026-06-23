@@ -11,7 +11,7 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         User::updateOrCreate(
-            ['email' => 'rian@student.campus.edu'],
+            ['email' => 'rian@student.nurulfikri.ac.id'],
             [
                 'nim_nip' => '1202190042',
                 'name' => 'Rian Hidayat',
@@ -24,7 +24,7 @@ class UserSeeder extends Seeder
         );
 
         User::updateOrCreate(
-            ['email' => 'saya@student.campus.edu'],
+            ['email' => 'saya@student.nurulfikri.ac.id'],
             [
                 'nim_nip' => '1202190021',
                 'name' => 'Saya',
@@ -37,7 +37,7 @@ class UserSeeder extends Seeder
         );
 
         User::updateOrCreate(
-            ['email' => 'admin@campus.edu'],
+            ['email' => 'admin@nurulfikri.ac.id'],
             [
                 'nim_nip' => 'ADM001',
                 'name' => 'Admin Lost Found',
@@ -50,7 +50,7 @@ class UserSeeder extends Seeder
         );
 
         User::updateOrCreate(
-            ['email' => 'satpam@campus.edu'],
+            ['email' => 'satpam@nurulfikri.ac.id'],
             [
                 'nim_nip' => 'SEC001',
                 'name' => 'Danu Prasetyo',

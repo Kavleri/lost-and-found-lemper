@@ -5,10 +5,13 @@
 @section('content')
 <div class="min-h-screen bg-gray-50 pb-24">
     <!-- Header -->
-    <div class="bg-white shadow-sm border-b border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-            <h1 class="text-2xl font-bold text-gray-900">Status Klaim Saya</h1>
-            <p class="mt-1 text-sm text-gray-600">Pantau proses verifikasi dan pengambilan barang yang telah Anda klaim.</p>
+    <div class="bg-gradient-to-r from-[#0c3e2b] via-[#0f4d36] to-[#072419] text-white shadow-md relative overflow-hidden">
+        <!-- Decorative soft glowing light -->
+        <div class="absolute -top-20 -right-20 w-48 h-48 bg-amber-500/10 rounded-full blur-2xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10">
+            <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight">Status Klaim Saya</h1>
+            <p class="text-sm text-emerald-100/90 mt-1">Pantau proses verifikasi dan pengambilan barang yang telah Anda klaim.</p>
         </div>
     </div>
 

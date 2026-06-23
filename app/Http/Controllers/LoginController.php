@@ -27,12 +27,12 @@ class LoginController extends Controller
     {
         // KITA TAMBAHKAN VALIDASI ENDS_WITH DI SINI
         $credentials = $request->validate([
-            'email' => ['required', 'email', 'ends_with:@student.campus.edu,@campus.edu'],
+            'email' => ['required', 'email', 'ends_with:@nurulfikri.ac.id,@student.nurulfikri.ac.id'],
             'password' => ['required'],
         ], [
             'email.required' => 'Email harus diisi',
             'email.email' => 'Format email tidak valid',
-            'email.ends_with' => 'Akses ditolak! Silakan gunakan email resmi kampus STT Terpadu Nurul Fikri.',
+            'email.ends_with' => 'Akses ditolak! Silakan gunakan email resmi kampus STT Terpadu Nurul Fikri (@nurulfikri.ac.id / @student.nurulfikri.ac.id).',
             'password.required' => 'Password harus diisi',
         ]);
 

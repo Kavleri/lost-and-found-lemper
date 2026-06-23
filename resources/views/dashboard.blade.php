@@ -6,43 +6,50 @@
     <div class="min-h-screen bg-gray-50 pb-24">
 
         <!-- Hero Section dengan Search -->
-        <div class="bg-gradient-to-br from-blue-600 to-blue-800 text-white pb-24">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Hero Section dengan Search -->
+        <div class="bg-gradient-to-br from-[#0c3e2b] via-[#0f4d36] to-[#072419] text-white pb-24 relative overflow-hidden">
+            <!-- Decorative soft glowing lights -->
+            <div class="absolute -top-40 -right-40 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -bottom-20 -left-20 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
                 <div class="text-center mb-8">
-                    <h1 class="text-3xl md:text-4xl font-bold mb-2">Campus Lost & Found</h1>
-                    <p class="text-blue-100 text-lg">Temukan barang yang hilang atau kembalikan barang yang Anda temukan</p>
+                    <h1 class="text-3xl md:text-5xl font-extrabold mb-3 tracking-tight">Campus Lost & Found</h1>
+                    <p class="text-emerald-100/90 text-lg max-w-xl mx-auto">Temukan barang yang hilang atau kembalikan barang temuan Anda secara praktis.</p>
                 </div>
 
                 <!-- Search Bar -->
-                <div class="max-w-3xl mx-auto">
-                    <form method="GET" action="{{ route('dashboard') }}" class="relative">
+                <div class="max-w-2xl mx-auto">
+                    <form method="GET" action="{{ route('dashboard') }}" class="relative group">
                         <input type="text" name="search" value="{{ request('search') }}"
                             placeholder="Cari barang (laptop, dompet, kunci, dll)..."
-                            class="w-full px-6 py-4 rounded-full text-gray-900 shadow-lg focus:ring-4 focus:ring-blue-300 focus:outline-none text-lg">
-                        <button type="submit"
-                            class="absolute right-3 top-2 bg-blue-600 text-white p-2.5 rounded-full hover:bg-blue-700 transition">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            class="w-full px-6 py-4 pl-14 rounded-full text-gray-900 shadow-xl border border-white/10 bg-white/95 focus:bg-white focus:ring-4 focus:ring-emerald-500/20 focus:outline-none text-lg transition duration-300">
+                        <div class="absolute left-5 top-1/2 -translate-y-1/2 text-gray-400">
+                            <svg class="w-6 h-6 group-hover:text-emerald-600 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                             </svg>
+                        </div>
+                        <button type="submit"
+                            class="absolute right-2 top-2 bg-gradient-to-r from-[#0f4d36] to-[#0c3e2b] text-white px-6 py-2.5 rounded-full hover:from-emerald-700 hover:to-emerald-800 shadow-md hover:shadow-lg transition duration-300 font-medium text-sm md:text-base">
+                            Cari Barang
                         </button>
                     </form>
                 </div>
             </div>
         </div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16 relative z-20">
 
             <!-- Statistik Cards -->
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-blue-500">
+                <div class="bg-white rounded-xl shadow-sm border border-gray-150 p-6 border-l-4 border-[#0f4d36] hover:shadow-md transition duration-300">
                     <div class="flex items-center justify-between">
                         <div>
-                            <p class="text-sm text-gray-600 font-medium">Total Barang</p>
+                            <p class="text-sm text-gray-500 font-medium">Total Barang</p>
                             <p class="text-3xl font-bold text-gray-900 mt-1">{{ $stats['total_items'] }}</p>
                         </div>
-                        <div class="p-3 bg-blue-100 rounded-full">
-                            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div class="p-3 bg-emerald-50 text-[#0f4d36] rounded-full">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
                             </svg>
@@ -50,14 +57,14 @@
                     </div>
                 </div>
 
-                <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-green-500">
+                <div class="bg-white rounded-xl shadow-sm border border-gray-150 p-6 border-l-4 border-emerald-500 hover:shadow-md transition duration-300">
                     <div class="flex items-center justify-between">
                         <div>
-                            <p class="text-sm text-gray-600 font-medium">Ditemukan</p>
+                            <p class="text-sm text-gray-500 font-medium">Ditemukan</p>
                             <p class="text-3xl font-bold text-gray-900 mt-1">{{ $stats['found_items'] }}</p>
                         </div>
-                        <div class="p-3 bg-green-100 rounded-full">
-                            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div class="p-3 bg-emerald-100/50 text-emerald-600 rounded-full">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
@@ -65,14 +72,14 @@
                     </div>
                 </div>
 
-                <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-red-500">
+                <div class="bg-white rounded-xl shadow-sm border border-gray-150 p-6 border-l-4 border-red-500 hover:shadow-md transition duration-300">
                     <div class="flex items-center justify-between">
                         <div>
-                            <p class="text-sm text-gray-600 font-medium">Hilang</p>
+                            <p class="text-sm text-gray-500 font-medium">Hilang</p>
                             <p class="text-3xl font-bold text-gray-900 mt-1">{{ $stats['lost_items'] }}</p>
                         </div>
-                        <div class="p-3 bg-red-100 rounded-full">
-                            <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div class="p-3 bg-rose-50 text-red-600 rounded-full">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                             </svg>
@@ -80,14 +87,14 @@
                     </div>
                 </div>
 
-                <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-yellow-500">
+                <div class="bg-white rounded-xl shadow-sm border border-gray-150 p-6 border-l-4 border-amber-500 hover:shadow-md transition duration-300">
                     <div class="flex items-center justify-between">
                         <div>
-                            <p class="text-sm text-gray-600 font-medium">Diklaim</p>
+                            <p class="text-sm text-gray-500 font-medium">Diklaim</p>
                             <p class="text-3xl font-bold text-gray-900 mt-1">{{ $stats['claimed_items'] }}</p>
                         </div>
-                        <div class="p-3 bg-yellow-100 rounded-full">
-                            <svg class="w-8 h-8 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div class="p-3 bg-amber-50 text-amber-600 rounded-full">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                             </svg>
@@ -99,7 +106,7 @@
             <!-- Tombol Aksi Cepat -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                 <a href="{{ route('lapor', ['type' => 'hilang']) }}"
-                    class="bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl p-6 shadow-lg hover:shadow-xl transition transform hover:-translate-y-1 flex items-center">
+                    class="bg-gradient-to-r from-amber-600 to-orange-700 text-white rounded-xl p-6 shadow-md hover:shadow-lg transition transform hover:-translate-y-1 flex items-center">
                     <div class="p-3 bg-white bg-opacity-20 rounded-full mr-4">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -108,12 +115,12 @@
                     </div>
                     <div>
                         <h3 class="text-lg font-bold">Laporkan Barang Hilang</h3>
-                        <p class="text-blue-100 text-sm">Kehilangan sesuatu? Laporkan di sini</p>
+                        <p class="text-amber-100 text-sm">Kehilangan sesuatu? Laporkan di sini</p>
                     </div>
                 </a>
 
                 <a href="{{ route('lapor', ['type' => 'ditemukan']) }}"
-                    class="bg-gradient-to-r from-green-600 to-green-700 text-white rounded-xl p-6 shadow-lg hover:shadow-xl transition transform hover:-translate-y-1 flex items-center">
+                    class="bg-gradient-to-r from-[#0f4d36] to-teal-700 text-white rounded-xl p-6 shadow-md hover:shadow-lg transition transform hover:-translate-y-1 flex items-center">
                     <div class="p-3 bg-white bg-opacity-20 rounded-full mr-4">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -122,7 +129,7 @@
                     </div>
                     <div>
                         <h3 class="text-lg font-bold">Laporkan Barang Ditemukan</h3>
-                        <p class="text-green-100 text-sm">Menemukan barang? Bantu kembalikan</p>
+                        <p class="text-emerald-100 text-sm">Menemukan barang? Bantu kembalikan</p>
                     </div>
                 </a>
             </div>

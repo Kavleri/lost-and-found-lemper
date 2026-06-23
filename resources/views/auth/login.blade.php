@@ -4,24 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Campus Lost & Found</title>
+    <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
     </style>
 </head>
-<body class="bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 min-h-screen flex items-center justify-center p-4">
+<body class="bg-gradient-to-br from-[#0c3e2b] via-[#0f4d36] to-[#072419] min-h-screen flex items-center justify-center p-4">
 
     <div class="w-full max-w-md">
         <!-- Logo & Title -->
         <div class="text-center mb-8">
-            <div class="inline-flex items-center justify-center w-20 h-20 bg-white rounded-2xl shadow-xl mb-4">
-                <svg class="w-12 h-12 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
-                </svg>
+            <div class="inline-flex items-center justify-center w-20 h-20 bg-[#0a4029] rounded-full shadow-xl mb-4 overflow-hidden border-2 border-white/20">
+                <img src="{{ asset('images/logo.png') }}" class="w-16 h-16 object-contain" alt="Logo">
             </div>
             <h1 class="text-3xl font-bold text-white mb-2">Campus Lost & Found</h1>
-            <p class="text-blue-100">Login dengan Email Kampus</p>
+            <p class="text-emerald-100/90">Login dengan Email Kampus</p>
         </div>
 
         <!-- Login Card -->
@@ -65,7 +64,7 @@
                             value="{{ old('email') }}"
                             required
                             autofocus
-                            class="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition @error('email') border-red-500 @enderror"
+                            class="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition @error('email') border-red-500 @enderror"
                             placeholder="nama@student.campus.edu"
                         >
                     </div>
@@ -90,7 +89,7 @@
                             id="password"
                             name="password"
                             required
-                            class="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition @error('password') border-red-500 @enderror"
+                            class="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition @error('password') border-red-500 @enderror"
                             placeholder="••••••••"
                         >
                     </div>
@@ -106,7 +105,7 @@
                             id="remember"
                             name="remember"
                             type="checkbox"
-                            class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                            class="h-4 w-4 text-emerald-600 focus:ring-emerald-500 border-gray-300 rounded"
                         >
                         <label for="remember" class="ml-2 block text-sm text-gray-700">
                             Ingat saya
@@ -114,7 +113,7 @@
                     </div>
 
                     <div class="text-sm">
-                        <a href="#" class="font-medium text-blue-600 hover:text-blue-500">
+                        <a href="#" class="font-medium text-emerald-600 hover:text-emerald-500">
                             Lupa password?
                         </a>
                     </div>
@@ -123,7 +122,7 @@
                 <!-- Submit Button -->
                 <button
                     type="submit"
-                    class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition transform hover:scale-[1.02]"
+                    class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-gradient-to-r from-[#0f4d36] to-[#0c3e2b] hover:from-emerald-700 hover:to-emerald-850 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 transition transform hover:scale-[1.02]"
                 >
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"/>
@@ -148,7 +147,7 @@
             <div class="mt-6">
                 <button
                     type="button"
-                    class="w-full flex justify-center py-3 px-4 border border-gray-300 rounded-lg shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition"
+                    class="w-full flex justify-center py-3 px-4 border border-gray-300 rounded-lg shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 transition"
                 >
                     <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12.545,10.239v3.821h5.445c-0.712,2.315-2.647,3.972-5.445,3.972c-3.332,0-6.033-2.701-6.033-6.032s2.701-6.032,6.033-6.032c1.498,0,2.866,0.549,3.921,1.453l2.814-2.814C17.503,2.988,15.139,2,12.545,2C7.021,2,2.543,6.477,2.543,12s4.478,10,10.002,10c8.396,0,10.249-7.85,9.426-11.748L12.545,10.239z"/>
@@ -160,13 +159,13 @@
 
         <!-- Footer -->
         <div class="mt-8 text-center">
-            <p class="text-sm text-blue-100">
+            <p class="text-sm text-emerald-100">
                 Belum punya akun?
-                <a href="#" class="font-medium text-white hover:text-blue-200 underline">
+                <a href="#" class="font-medium text-white hover:text-emerald-200 underline">
                     Hubungi Admin Kampus
                 </a>
             </p>
-            <p class="mt-4 text-xs text-blue-200">
+            <p class="mt-4 text-xs text-emerald-200/70">
                 &copy; {{ date('Y') }} Campus Lost & Found System. All rights reserved.
             </p>
         </div>

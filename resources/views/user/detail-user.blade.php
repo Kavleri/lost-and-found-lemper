@@ -16,7 +16,7 @@
 
     <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
         <!-- Header -->
-        <div class="bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-8 text-white">
+        <div class="bg-gradient-to-r from-[#0c3e2b] to-[#0f4d36] px-6 py-8 text-white">
             <div class="flex items-center space-x-4">
                 <div class="w-20 h-20 rounded-full bg-white bg-opacity-20 flex items-center justify-center text-2xl font-bold">
                     {{ substr($user->name, 0, 2) }}
