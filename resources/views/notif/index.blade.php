@@ -5,20 +5,23 @@
 @section('content')
     <div class="min-h-screen bg-gray-50 pb-24">
         <!-- Header -->
-        <div class="bg-white shadow-sm border-b border-gray-200">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-                <div class="flex items-center justify-between">
+        <div class="bg-gradient-to-r from-[#0c3e2b] via-[#0f4d36] to-[#072419] text-white shadow-md relative overflow-hidden">
+            <!-- Decorative soft glowing light -->
+            <div class="absolute -top-20 -right-20 w-48 h-48 bg-amber-500/10 rounded-full blur-2xl pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                     <div>
-                        <h1 class="text-2xl font-bold text-gray-900">Notifikasi</h1>
-                        <p class="text-sm text-gray-600 mt-1">Pantau semua pembaruan tentang barang dan klaim Anda</p>
+                        <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight">Pusat Notifikasi</h1>
+                        <p class="text-sm text-emerald-100/90 mt-1">Pantau semua pembaruan tentang barang dan klaim Anda.</p>
                     </div>
                     @if ($unreadCount > 0)
                         <form method="POST" action="{{ route('notifications.readAll') }}">
                             @csrf
                             <button type="submit"
-                                class="flex items-center space-x-2 px-4 py-2 text-sm font-medium text-blue-600 bg-blue-50 rounded-lg hover:bg-blue-100 transition">
+                                class="flex items-center space-x-2 px-4 py-2 text-sm font-medium text-emerald-100 hover:text-white border border-emerald-500/30 rounded-lg hover:bg-white/10 transition self-start md:self-auto">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    <path stroke-linecap="round" stroke-linejoin="round"
                                         d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
                                 <span>Tandai semua dibaca</span>

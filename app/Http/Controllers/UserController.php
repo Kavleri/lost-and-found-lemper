@@ -53,7 +53,7 @@ class UserController extends Controller
         $validated = $request->validate([
             'nim_nip' => 'nullable|string|max:20|unique:users,nim_nip',
             'name' => 'required|string|max:100',
-            'email' => 'required|email|max:100|unique:users,email',
+            'email' => 'required|email|max:100|ends_with:@nurulfikri.ac.id,@student.nurulfikri.ac.id|unique:users,email',
             'password' => 'required|string|min:8|confirmed',
             'role' => 'required|in:mahasiswa,dosen,staf,satpam,admin',
             'phone' => 'nullable|string|max:15',
@@ -62,6 +62,7 @@ class UserController extends Controller
         ], [
             'nim_nip.unique' => 'NIM/NIP sudah terdaftar.',
             'email.unique' => 'Email sudah terdaftar.',
+            'email.ends_with' => 'Format email harus menggunakan domain resmi @nurulfikri.ac.id atau @student.nurulfikri.ac.id.',
             'password.confirmed' => 'Konfirmasi password tidak cocok.',
             'password.min' => 'Password minimal 8 karakter.',
             'role.in' => 'Role tidak valid.',
@@ -115,6 +116,7 @@ class UserController extends Controller
                 'required',
                 'email',
                 'max:100',
+                'ends_with:@nurulfikri.ac.id,@student.nurulfikri.ac.id',
                 Rule::unique('users')->ignore($user->id),
             ],
             'password' => 'nullable|string|min:8|confirmed',
@@ -125,6 +127,7 @@ class UserController extends Controller
         ], [
             'nim_nip.unique' => 'NIM/NIP sudah terdaftar.',
             'email.unique' => 'Email sudah terdaftar.',
+            'email.ends_with' => 'Format email harus menggunakan domain resmi @nurulfikri.ac.id atau @student.nurulfikri.ac.id.',
             'password.confirmed' => 'Konfirmasi password tidak cocok.',
             'password.min' => 'Password minimal 8 karakter.',
         ]);

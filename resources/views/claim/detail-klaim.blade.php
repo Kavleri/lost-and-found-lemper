@@ -5,13 +5,16 @@
 @section('content')
 <div class="min-h-screen bg-gray-50 pb-24">
     <!-- Header -->
-    <div class="bg-white shadow-sm border-b border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex items-center justify-between">
+    <div class="bg-gradient-to-r from-[#0c3e2b] via-[#0f4d36] to-[#072419] text-white shadow-md relative overflow-hidden">
+        <!-- Decorative soft glowing light -->
+        <div class="absolute -top-20 -right-20 w-48 h-48 bg-amber-500/10 rounded-full blur-2xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div>
-                <h1 class="text-2xl font-bold text-gray-900">Detail Klaim Barang</h1>
-                <p class="mt-1 text-sm text-gray-600">ID Klaim: #LF-{{ str_pad($claim->id, 5, '0', STR_PAD_LEFT) }}</p>
+                <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight">Detail Klaim Barang</h1>
+                <p class="text-sm text-emerald-100/90 mt-1">ID Klaim: <span class="font-mono font-bold text-amber-400">#LF-{{ str_pad($claim->id, 5, '0', STR_PAD_LEFT) }}</span></p>
             </div>
-            <a href="{{ route('claims.index') }}" class="flex items-center space-x-2 px-4 py-2 text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-50 transition">
+            <a href="{{ route('claims.index') }}" class="inline-flex items-center justify-center space-x-2 px-4 py-2 text-emerald-100 hover:text-white border border-emerald-500/30 rounded-lg hover:bg-white/10 transition self-start md:self-auto">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
                 <span>Kembali ke Daftar</span>
             </a>

@@ -15,10 +15,10 @@ class DummyDataSeeder extends Seeder
     public function run(): void
     {
         // Ambil data user secara dinamis
-        $rian = User::where('email', 'rian@student.campus.edu')->first();
-        $saya = User::where('email', 'saya@student.campus.edu')->first();
-        $admin = User::where('email', 'admin@campus.edu')->first();
-        $satpam = User::where('email', 'satpam@campus.edu')->first();
+        $rian = User::where('email', 'rian@student.nurulfikri.ac.id')->first();
+        $saya = User::where('email', 'saya@student.nurulfikri.ac.id')->first();
+        $admin = User::where('email', 'admin@nurulfikri.ac.id')->first();
+        $satpam = User::where('email', 'satpam@nurulfikri.ac.id')->first();
 
         // Ambil kategori secara dinamis
         $elektronik = Category::where('name', 'Elektronik')->first();

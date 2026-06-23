@@ -5,18 +5,20 @@
 @section('content')
     <div class="min-h-screen bg-gray-50 pb-24">
         <!-- Header -->
-        <div class="bg-white shadow-sm border-b border-gray-200">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div class="bg-gradient-to-r from-[#0c3e2b] via-[#0f4d36] to-[#072419] text-white shadow-md relative overflow-hidden">
+            <!-- Decorative soft glowing light -->
+            <div class="absolute -top-20 -right-20 w-48 h-48 bg-amber-500/10 rounded-full blur-2xl pointer-events-none"></div>
+
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10">
                 <a href="{{ route('items.show', $item) }}"
-                    class="inline-flex items-center text-sm text-gray-600 hover:text-blue-600 mb-2">
+                    class="inline-flex items-center text-sm text-emerald-100 hover:text-amber-400 transition mb-3">
                     <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
                     </svg>
                     Kembali ke Detail
                 </a>
-                <h1 class="text-2xl font-bold text-gray-900">Edit Barang</h1>
-                <p class="text-sm text-gray-600 mt-1">Perbarui informasi barang dengan kode: <span
-                        class="font-mono font-bold">{{ $item->item_code }}</span></p>
+                <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight">Edit Laporan Barang</h1>
+                <p class="text-sm text-emerald-100/90 mt-1">Perbarui informasi barang dengan kode: <span class="font-mono font-bold text-amber-400">{{ $item->item_code }}</span></p>
             </div>
         </div>
 
